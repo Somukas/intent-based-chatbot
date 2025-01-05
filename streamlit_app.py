@@ -67,3 +67,7 @@ for sender, message in st.session_state.messages:
         st.write(f"**You:** {message}")
     else:
         st.write(f"**Bot:** {message}")
+
+
+#Streamlit link: https://intent-based-chatbot-nvqnx47kpeof3xmfqexwvy.streamlit.app/
+#Github Link: https://github.com/Somukas/intent-based-chatbot/edit/main/streamlit_app.py
