@@ -12,8 +12,9 @@ nltk.download('punkt')
 nltk.download('wordnet')
 nltk.download('stopwords')
 
-f=open('intents.json')
-data=json.load(f)
+with open("intents.json", "r") as file:
+    data = json.load(file)
+data = data["intents"] 
 vectorizer = TfidfVectorizer()
 model = LogisticRegression()
 
