@@ -26,16 +26,11 @@ x = vectorizer.fit_transform(patterns)
 y = tags
 model.fit(x, y)
 
-def preprocess_input(user_input):
-   tokens = word_tokenize(user_input.lower())  # Tokenize and convert to lowercase
-   filtered_tokens = [lemmatizer.lemmatize(tokens)]
-   return filtered_tokens
 
-def match_intent(user_input):
-    processed_input = preprocess_input(user_input)
-    for intent in data["intents"]:
-        for pattern in intent["patterns"]:
-            pattern_tokens = preprocess_input(pattern)
-            if set(processed_input).intersection(pattern_tokens):  # Check for common words
-                return intent
-    return None
+def bot(user_input):
+    input_text = vectorizer.transform([input_text])
+    tag = clf.predict(input_text)[0]
+    for intent in intents:
+        if intent['tag'] == tag:
+            response = random.choice(intent['responses'])
+            return response
