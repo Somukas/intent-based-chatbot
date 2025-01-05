@@ -49,7 +49,7 @@ if user_input:
 
         intent = bot(user_input)
         if intent:
-           response = random.choice(intent["responses"])
+           response = random.choice(intent['responses'])
         else:
             response = "Sorry, reword the question"  # Default response
 
