@@ -52,7 +52,7 @@ def main():
           if intent:
               response = random.choice(intent["responses"])
           else:
-              response = random.choice(data[intents"][-1]["responses"])  # Default response
+              response = "Sorry, reword the question"  # Default response
 
         # Add bot response to chat history
           st.session_state.messages.append(("Bot", response))
