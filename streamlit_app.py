@@ -16,8 +16,7 @@ nltk.download('stopwords')
 
 # Load intents.json
 with open("intents.json", "r") as file:
-    data = json.load(file)
-intents = data["intents"]
+    intents = json.load(file)  # Load JSON as a list
 
 # Initialize preprocessing and model
 lemmatizer = WordNetLemmatizer()
@@ -46,7 +45,7 @@ def bot(user_input):
             return random.choice(intent["responses"])  # Return random response
     return "Sorry, I don't understand that."  # Default response
 
-
+# Streamlit UI
 st.title("Intent-Based Chatbot")
 st.write("Ask me anything, and I'll try my best to help!")
 
@@ -68,4 +67,3 @@ for sender, message in st.session_state.messages:
         st.write(f"**You:** {message}")
     else:
         st.write(f"**Bot:** {message}")
-     
