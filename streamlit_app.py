@@ -34,7 +34,7 @@ def bot(user_input):
     tag = model.predict(input_text)[0]
     for intent in data:
         if intent['tag'] == tag:
-            response = random.choice(intent['responses'])
+            response = random.choice(intent["responses"])
             return response
 
 import streamlit as st
@@ -49,7 +49,7 @@ if user_input:
 
         intent = bot(user_input)
         if intent:
-           response = random.choice(intent['responses'])
+           response = random.choice(intent["responses"])
         else:
             response = "Sorry, reword the question"  # Default response
 
