@@ -31,7 +31,7 @@ model.fit(x, y)
 
 def bot(user_input):
     input_text = vectorizer.transform([user_input])
-    tag = clf.predict(input_text)[0]
+    tag = model.predict(input_text)[0]
     for intent in data:
         if intent['tag'] == tag:
             response = random.choice(intent['responses'])
