@@ -1,3 +1,4 @@
+import streamlit as st
 st.title("Intent-Based Chatbot")
 st.write("Ask me anything, and I'll try my best to help!")
 if "messages" not in st.session_state:
